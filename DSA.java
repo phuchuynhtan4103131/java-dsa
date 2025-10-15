@@ -4,10 +4,14 @@ import java.util.Scanner;
 public class DSA {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
-        double a = scnr.nextDouble();
-        double b = scnr.nextDouble();
-        double c = scnr.nextDouble();
-        System.out.println(findDelta(a, b, c));
+        // double a = scnr.nextDouble();
+        // double b = scnr.nextDouble();
+        // double c = scnr.nextDouble();
+        // System.out.println(findDelta(a, b, c));
+        System.out.println("Enter your phrase: ");
+        String text = scnr.nextLine();
+        // System.out.println(Uppercase(text));
+        System.out.println(isPasswordComplex(text));
     }
 
 
@@ -38,5 +42,17 @@ public class DSA {
         }
         return d;
     }
+//     public static boolean Uppercase(String input){
+//         return input.chars().allMatch(Character::isUpperCase);
+//     }
+//     public static boolean Lowercase(String input){
+//         return input.chars().allMatch(Character::isLowerCase);
+// "^[A-Za-z0-9]{8,}$"
+//     }
+    public static boolean isPasswordComplex(String input){
+        // return input.chars().anyMatch(Character::isUpperCase) && input.chars().anyMatch(Character::isLowerCase) && input.chars().anyMatch(Character::isDigit);
+        return input.chars().anyMatch(c -> Character.isUpperCase(c) || Character.isLowerCase(c) || Character.isDigit(c));
+    }
+
 }
     
