@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class DSA {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
@@ -8,10 +7,21 @@ public class DSA {
         // double b = scnr.nextDouble();
         // double c = scnr.nextDouble();
         // System.out.println(findDelta(a, b, c));
-        System.out.println("Enter your phrase: ");
-        String text = scnr.nextLine();
-        // System.out.println(Uppercase(text));
-        System.out.println(isPasswordComplex(text));
+        // System.out.println("Enter your phrase: ");
+        // String text = scnr.nextLine();
+        // // System.out.println(Uppercase(text));
+        // System.out.println(isPasswordComplex(text));
+        // System.out.println("Enter your array list: ");
+        // ArrayList<Integer> list = new ArrayList<>();
+        // System.out.println("Enter your element of lists: ");
+        // int n = scnr.nextInt();
+        // for(int i = 0; i < n; i++){
+        //     list.add(scnr.nextInt());
+        // }
+        // System.out.println("The median of the list is: " + findMedian(list));
+
+        int[] array = {1, 3, 5, 7, 12, 15, 209};
+        System.out.println(minGap(array, 7));
     }
 
 
@@ -49,10 +59,31 @@ public class DSA {
 //         return input.chars().allMatch(Character::isLowerCase);
 // "^[A-Za-z0-9]{8,}$"
 //     }
-    public static boolean isPasswordComplex(String input){
-        // return input.chars().anyMatch(Character::isUpperCase) && input.chars().anyMatch(Character::isLowerCase) && input.chars().anyMatch(Character::isDigit);
-        return input.chars().anyMatch(c -> Character.isUpperCase(c) || Character.isLowerCase(c) || Character.isDigit(c));
-    }
+    // public static boolean isPasswordComplex(String input){
+    //     // return input.chars().anyMatch(Character::isUpperCase) && input.chars().anyMatch(Character::isLowerCase) && input.chars().anyMatch(Character::isDigit);
+    //     return input.chars().anyMatch(c -> Character.isUpperCase(c) || Character.isLowerCase(c) || Character.isDigit(c));
+    // }
+    // public static double findMedian(ArrayList<Integer> list){
+    //     Collections.sort(list);
+    //     int n = list.size();
+    //     if(n % 2 == 0){
+    //         return (list.get(n / 2 ) + list.get(n / 2 - 1) / 2.0);
+    //     }else{
+    //         return list.get(n /2);
+    //     }
+    // }
 
+    public static int minGap(int[] array, int element){
+        if(element < 2 ){
+            return 0;
+        }
+        int min = array[1] - array[0];
+        for(int i = 0; i < element - 1; i++){
+            if(array[1]-array[0] < min){
+                min = array[i+1] - array[0+1];
+            }
+        }
+        return min;
+    }
 }
     
