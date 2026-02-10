@@ -1,5 +1,6 @@
 import java.io.Console;
 import java.util.Scanner;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,11 +26,11 @@ public class Main {
             case 2:
                 battery();
         }
-        
+
         scnr.close();
     }
         public static void register(){
-            
+
             System.out.println("==========================================================");
             System.out.println("||                  SUNSHINE REPAIR HUB                 ||");
             System.out.println("||             CREATE A NEW ACCOUNT TO BEGIN            ||");
@@ -60,7 +61,7 @@ public class Main {
                 System.out.println("==========================================================");
                 String username = console.readLine();
                 System.out.println("Saving....");
-                System.out.println("Saved successfully"); 
+                System.out.println("Saved successfully");
                 char[] password = console.readPassword("Enter your password: ");
                 System.out.printf("USER: %s | PASSWORD: %s \n",username, password );
         }
@@ -71,7 +72,7 @@ public class Main {
             slowPrint("       HEALTH SERVICE CLINIC MENU         ", speed);
             slowPrint("||     Your Device, Our Priority.        ||", speed);
             slowPrint("==========================================", speed);
-            
+
             slowPrint("\n--- REPAIR SERVICES ---", speed);
             slowPrint("1.  Smartphone Screen Replacement", speed);
             slowPrint("2.  Battery Health & Replacement", speed);
@@ -86,7 +87,7 @@ public class Main {
         }
         public static void screenReplacement(){
             Scanner scnr = new Scanner(System.in);
-            int speed = 10; 
+            int speed = 10;
             slowPrint("You have selected Smartphone Screen Replacement", speed);
             slowPrint("First, please select your phone", speed);
             String[] phones = {"1. iPhone 17 Pro Max", "2. iPhone 17", "3. Samsung Galaxy S25 Ultra",
@@ -100,10 +101,25 @@ public class Main {
         }
         public static void battery(){
             Scanner scnr = new Scanner(System.in);
-            int delay = 10;
-            slowPrint("You have chosen battery health check service", delay);
-            slowPrint("This service may requires technical reviews and face to face replacement, We suggest you may make a reservation for this", delay);
-            slowPrint("", delay);
+            int speed = 10;
+            slowPrint("You have chosen battery health check service", speed);
+            slowPrint("This service may requires technical reviews and face to face replacement, We suggest you may make a reservation for this", speed);
+            slowPrint("==========================================================", speed);
+            slowPrint("||          BATTERY REPLACEMENT RESERVATION              ||", speed);
+            slowPrint("==========================================================", speed);
+            slowPrint("You may enter your fullname", speed);
+            String name = scnr.nextLine();
+            slowPrint("Enter your phone numbers", speed);
+            int phoneNum = scnr.nextInt();
+            slowPrint("Please select your available time for reservation", speed);
+            String time = scnr.nextLine();
+            slowPrint("========================================",speed);
+            slowPrint("          RESERVATION SUMMARY           ",speed);
+            slowPrint("========================================",speed);
+            slowPrint("Your name: "  + name,speed);
+            slowPrint("Your phone numbers: " + phoneNum, speed);
+            slowPrint("Reservation time: " + time,speed);
+
         }
 
         public static void slowPrint(String text, int delay){
